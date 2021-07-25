@@ -1,2 +1,3 @@
-# machine-maths
-Exploring mathematics by playing with machinens
+# Machine maths
+
+Exploring mathematics by playing with machines
