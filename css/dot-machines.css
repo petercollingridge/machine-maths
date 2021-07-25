@@ -1,0 +1,22 @@
+.dot-machine {
+    max-width: 720px;
+    padding: 1rem;
+    border: 1px solid #888;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dot-machine .input,
+.dot-machine .machine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dot-machine .machine {
+    background-color: #dde;
+    padding: 1rem;
+    border-radius: 10px;
+}
