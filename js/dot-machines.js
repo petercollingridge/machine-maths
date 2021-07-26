@@ -1,17 +1,35 @@
 function initMachine(id) {
     const area = document.getElementById(id);
-    const input = area.getElementsByClassName('input')[0];
-    const machine = area.getElementsByClassName('machine')[0];
+    const input = getMachinePart(area, 'input');
+    const output = getMachinePart(area, 'output');
+    const machine = getMachinePart(area, 'machine');
 
-    addSliderHandler(input);
-    addSliderHandler(machine);
+    const updateOutput = getOutputFunction(input, machine, output);
+    addSliderHandler(input, updateOutput);
+    addSliderHandler(machine, updateOutput);
 }
 
-function addSliderHandler(el) {
-    const slider = el.getElementsByTagName('input')[0];
-    const value = el.getElementsByClassName('slider-value')[0];
+function getMachinePart(area, name) {
+    const part = area.getElementsByClassName(name)[0];
+    const slider = part.getElementsByTagName('input')[0];
+    const value = part.getElementsByClassName('slider-value')[0];
+    return { slider, value };
+}
+
+function getOutputFunction(input, machine, output) {
+    return function() {
+        const inputValue = +input.value.innerHTML;
+        const machineValue = +machine.value.innerHTML;
+        output.value.innerHTML = inputValue + machineValue;
+    }
+}
+
+function addSliderHandler({ slider, value }, callback) {
     slider.addEventListener('input', (evt) =>  {
         value.innerHTML = evt.target.value;
+        if (callback) {
+            callback();
+        }
     });
 }
 
