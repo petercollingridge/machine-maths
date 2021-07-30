@@ -1,25 +1,18 @@
-import logo from './logo.svg';
+import Machine from './Machines/Machine';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <main>
+            <h1>Apple machines</h1>
+            <section>
+                <div>You discover a new machine.</div>
+                <div>On its conveyor belt are <strong>2</strong> apples.</div>
+                <div>Press Go and see what the machine does.</div>
+            </section>
+            <Machine />
+        </main>
+    );
 }
 
 export default App;
