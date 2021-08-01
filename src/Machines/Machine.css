@@ -1,8 +1,23 @@
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform:rotate(360deg);
+    }
+}
+
+.spin {
+    animation: spin 4s linear infinite;
+}
+
 .machine-img {
     border: 1px solid #888;
     border-radius: 10px;
     margin: 1rem 0;
     min-height: 300px;
+}
+
+.main-box {
+    fill: rgb(180, 195, 205)
 }
 
 .conveyor-belt {
@@ -19,6 +34,10 @@
     fill: rgb(25, 55, 75);
 }
 
+.conveyor-wheel-dot {
+    fill: rgb(255, 255, 255);
+}
+
 .conveyor-leg {
     fill: rgb(130, 40, 45);
 }
@@ -31,4 +50,25 @@
 
 .conveyor-foot {
     fill: rgb(210, 60, 80);
+}
+
+.spring-part {
+    stroke-width: 8;
+    stroke-linecap: round;
+}
+
+.spring-back {
+    stroke: rgb(140, 35, 65);
+}
+
+.spring-front {
+    stroke: rgb(216, 60, 75);
+}
+
+.spring-top {
+    fill: rgb(232, 148, 108);
+}
+
+.spring-base {
+    fill: rgb(216, 60, 75);
 }
