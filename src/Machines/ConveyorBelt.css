@@ -1,0 +1,32 @@
+
+.conveyor-belt {
+    fill: rgb(180, 195, 205);
+    stroke: rgb(25, 55, 75);
+    stroke-width: 2;
+}
+
+.conveyor-wheel {
+    fill: rgb(50, 100, 135);
+}
+
+.conveyor-wheel-axle {
+    fill: rgb(25, 55, 75);
+}
+
+.conveyor-wheel-dot {
+    fill: rgb(255, 255, 255);
+}
+
+.conveyor-leg {
+    fill: rgb(130, 40, 45);
+}
+
+.leg-thread {
+    fill: none;
+    stroke: rgb(130, 40, 45);
+    stroke-width: 1;
+}
+
+.conveyor-foot {
+    fill: rgb(210, 60, 80);
+}

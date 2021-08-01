@@ -9,6 +9,10 @@
     animation: spin 4s linear infinite;
 }
 
+.btn {
+    cursor: pointer;
+}
+
 .machine-img {
     border: 1px solid #888;
     border-radius: 10px;
@@ -20,36 +24,11 @@
     fill: rgb(180, 195, 205)
 }
 
-.conveyor-belt {
-    fill: rgb(180, 195, 205);
+.machine-gauge {
+    fill: white;
     stroke: rgb(25, 55, 75);
-    stroke-width: 2;
-}
-
-.conveyor-wheel {
-    fill: rgb(50, 100, 135);
-}
-
-.conveyor-wheel-axle {
-    fill: rgb(25, 55, 75);
-}
-
-.conveyor-wheel-dot {
-    fill: rgb(255, 255, 255);
-}
-
-.conveyor-leg {
-    fill: rgb(130, 40, 45);
-}
-
-.leg-thread {
-    fill: none;
-    stroke: rgb(130, 40, 45);
-    stroke-width: 1;
-}
-
-.conveyor-foot {
-    fill: rgb(210, 60, 80);
+    stroke-width: 3;
+    stroke-linejoin: round;
 }
 
 .spring-part {
