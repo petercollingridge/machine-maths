@@ -1,0 +1,349 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+
+<style>
+    .red {
+        fill: rgb(216, 60, 75);
+    }
+    .dark-red {
+        fill: rgb(140, 35, 65);
+    }
+
+    .floor {
+        stroke-width: 2;
+        stroke: #445;
+    }
+    .chute {
+        stroke: rgb(50, 100, 135);
+        stroke-width: 100;
+        fill: none
+    }
+    .chute-segment {
+        fill: rgb(50, 100, 135);
+        stroke-width: 1;
+        stroke: rgb(180, 195, 205);
+    }
+    .conveyor-belt {
+        fill: rgb(180, 195, 205);
+        stroke: rgb(25, 55, 75);
+        stroke-width: 2;
+    }   
+    #conveyor-wheel {
+        fill: rgb(50, 100, 135);
+    }
+    #conveyor-wheel .axle {
+        fill: rgb(25, 55, 75);
+    }
+    #conveyor-leg .conveyor-leg {
+        fill: rgb(130, 40, 45);
+    }
+    #conveyor-leg .conveyor-foot {
+        fill: rgb(210, 60, 80);
+    }
+    #conveyor-leg .leg-thread {
+        stroke: rgb(130, 40, 45);
+        stroke-width: 1;
+    }
+
+    .main-box {
+        fill: rgb(180, 195, 205)
+    }
+    #spring-part {
+        stroke-width: 8;
+        stroke-linecap: round;
+    }
+    .spring-back {
+        stroke: rgb(140, 35, 65);
+    }
+    .spring-front {
+        stroke: rgb(216, 60, 75);
+    }
+    .spring-top {
+        fill: rgb(232, 148, 108);
+    }
+    .spring-base {
+        fill: rgb(216, 60, 75);
+    }
+
+    .gauge {
+        fill: white;
+        stroke: rgb(25, 55, 75);
+        stroke-width: 3;
+        stroke-linejoin: round;
+    }
+    .gauge-pointer {
+        fill: rgb(25, 55, 75);
+    }
+    #thermometer .bulb {
+        fill: rgb(216, 60, 75);
+    }
+    #thermometer .mercury {
+        stroke: rgb(216, 60, 75);
+        stroke-width: 3;
+        stroke-linecap: round;
+    }
+    #thermometer .ticks {
+        stroke: rgb(25, 55, 75);
+        stroke-width: 1;
+    }
+
+    .light-base {
+        fill: rgb(250, 190, 170);
+    }
+    .light-glass {
+        fill: rgb(216, 60, 75);
+        opacity: 0.4;
+    }
+    #pipes path{
+        stroke: rgb(216, 60, 75);
+        stroke-linecap: round;
+        stroke-width: 8;
+        fill: none;
+    }
+    .panel-section {
+        fill: rgb(180, 195, 205);
+        stroke: rgb(25, 55, 75);
+        stroke-width: 2;
+    }
+    .panel-nail {
+        fill: rgb(25, 55, 75)
+    }
+</style>
+
+<defs>
+    <g id="conveyor-wheel">
+        <circle cx="0" cy="0" r="8" />
+        <circle class="axle" cx="0" cy="0" r="2" />
+    </g>
+
+    <g id="conveyor">
+        <path class="conveyor-belt" d="M0 0a10 10 0 0 0 0 20h140a10 10 0 0 0 0 -20z"/>
+        <use href="#conveyor-wheel" x="0" y="10" />
+        <use href="#conveyor-wheel" x="20" y="10" />
+        <use href="#conveyor-wheel" x="40" y="10" />
+        <use href="#conveyor-wheel" x="60" y="10" />
+        <use href="#conveyor-wheel" x="80" y="10" />
+        <use href="#conveyor-wheel" x="100" y="10" />
+        <use href="#conveyor-wheel" x="120" y="10" />
+        <use href="#conveyor-wheel" x="140" y="10" />
+    </g>
+
+    <g id="conveyor-leg">
+        <rect class="conveyor-leg" x="0" y="0" width="7" height="93"/>
+        <rect class="conveyor-foot" x="-2.5" y="93" width="12" height="6" rx="2" ry="2"/>
+        <path class="leg-thread" d="M-1 1h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9m0 2h9m0 2h-9"/>
+    </g>
+
+    <path id="spring-part" d="M-20 0l40 8m0 16l-40 -8m0 16l40 8m0 16l-40 -8m0 16l40 8"/>
+
+    <g id="spring">
+        <use class="spring-back" transform="scale(-1, 1)" href="#spring-part" y="13"/>
+        <use class="spring-front" href="#spring-part" y="5"/>
+        <rect class="spring-top" x="-30" y="0" width="60" height="8" />
+        <rect class="spring-base" x="-35" y="82" width="70" height="12" rx="3" ry="3"/>
+        <rect class="spring-base" x="-35" y="88" width="70" height="6"/>
+    </g>
+
+    <path id="chute-segment" class="chute-segment" d="M0 75c0 -3 -6.28 -3.27 -6.54 -0.29l-8.72 99.62c-0.7 7.97 15.25 8.67 15.25 0.67z" />
+
+    <g id="light">
+        <rect class="light-base" x="0" y="-6" width="24" height="6"/>
+        <path class="light-glass" d="M4 -6l2-24a6 6 1 0 1 12 0l2 24"/>
+        <path class="red" d="M7 -6l1.5-18a3.5 3.5 1 0 1 7 0l1.5 18"/>
+    </g>
+
+    <circle id="gauge" class="gauge" r="10"/>
+
+    <g id="half-gauge">
+        <path class="gauge" d="M-15 0a15 15 0 0 1 30 0z"/>
+    </g>
+
+    <g id="gauge-pointer" class="gauge-pointer">
+        <path d="M0 -1.5l7.5 1.5l-7.5 1.5"/>
+        <circle r="1.25"/>
+    </g>
+
+    <g id="gauge-pointer-thin">
+        <path stroke="rgb(25, 55, 75)" stroke-width="1.25" d="M0 0h9"/>
+        <circle  class="gauge-pointer" r="1.25"/>
+    </g>
+
+    <g id="logo-half-turn">
+        <circle class="gauge" r="24"/>
+        <path class="gauge" d="m0 -16a16 16 0 0 1 0 32"/>
+        <path class="gauge-pointer" d="m-5 15.5l8 -4l-2 4l2 4z"/>
+    </g>
+
+    <g id="thermometer">
+        <path class="gauge" d="M0 0v-30a4 4 0 0 1 8 0v30a8 8 0 1 1 -8 0z" />
+        <circle class="bulb" cx="4" cy="7" r="5" />
+        <line class="mercury" x1="4" y1="7" x2="4" y2="-12"/>
+        <path class="ticks" d="M11 -1h3m-3 -3h3m-3 -3h3m-3 -3h3m-3 -3h3m-3 -3h3m-3 -3h3m-3 -3h3m-3 -3h3m-3 -3h3m-3 -3"/>
+    </g>
+
+    <g id="pipes">
+        <circle class="dark-red" cx="36" cy="143" r="8"/>
+        <path d="M0 0v8 a6 6 0 0 0 6 6h24a6 6 0 0 1 0 12h-24a6 6 0 0 0 0 12h24a6 6 0 0 1 0 12h-24a6 6 0 0 0 0 12h24a6 6 0 0 1 0 12h-24a6 6 0 0 0 0 12h24a6 6 0 0 1 0 12h-24a6 6 0 0 0 0 12h24a6 6 0 0 1 6 6v27"/>
+    </g>
+
+    <g id="reservoir">
+        <path fill="#fba" d="M-16 -20a16 16 0 0 0 32 0v-20a100 100 0 0 1 -32 0z"/>
+        <rect class="red" opacity="0.4" x="-16" y="-64" width="32" height="60" rx="16" ry="16"/>
+        <rect class="red" x="-5" y="-5" width="10" height="5"/>
+    </g>
+
+    <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="12" height="12">
+        <path d="M-2,2 l4,-4M0,12 l12,-12M10,14 l4,-4" stroke="#335" stroke-width="5" />
+    </pattern>
+
+    <g id="panel">
+        <rect fill="rgb(240, 190, 85)" width="144" height="55" rx="2" ry="2"/>
+        <rect fill="url(#diagonalHatch)" stroke="rgb(25, 55, 75)" stroke-width="2" width="144" height="55" rx="2" ry="2"/>
+
+        <rect class="panel-section" x="8" y="8" width="128" height="39" rx="2" ry="2"/>
+        <rect class="panel-section" x="38" y="8" width="38" height="39" rx="2" ry="2"/>
+        <rect class="panel-section" x="103" y="17" width="33" height="30" rx="2" ry="2"/>
+        <rect class="panel-section" x="50" y="8" width="66" height="14" rx="2" ry="2"/>
+        <rect class="panel-section" x="8" y="8" width="46" height="30" rx="2" ry="2"/>
+
+        <g class="panel-nail">
+            <circle cx="11" cy="11" r="1" />
+            <circle cx="19" cy="11" r="1" />
+            <circle cx="27" cy="11" r="1" />
+            <circle cx="35" cy="11" r="1" />
+            <circle cx="43" cy="11" r="1" />
+            <circle cx="51" cy="11" r="1" />
+            <circle cx="11" cy="35" r="1" />
+            <circle cx="19" cy="35" r="1" />
+            <circle cx="27" cy="35" r="1" />
+            <circle cx="35" cy="35" r="1" />
+            <circle cx="43" cy="35" r="1" />
+            <circle cx="51" cy="35" r="1" />
+            <circle cx="11" cy="19" r="1" />
+            <circle cx="11" cy="27" r="1" />
+            <circle cx="51" cy="19" r="1" />
+            <circle cx="51" cy="27" r="1" />
+
+            <circle cx="11" cy="44" r="1" />
+            <circle cx="19" cy="44" r="1" />
+            <circle cx="27" cy="44" r="1" />
+            <circle cx="35" cy="44" r="1" />
+
+            <circle cx="41" cy="44" r="1" />
+            <circle cx="49" cy="44" r="1" />
+            <circle cx="57" cy="44" r="1" />
+            <circle cx="65" cy="44" r="1" />
+            <circle cx="73" cy="44" r="1" />
+            <circle cx="73" cy="36" r="1" />
+            <circle cx="73" cy="28" r="1" />
+
+            <circle cx="81" cy="44" r="1" />
+            <circle cx="89" cy="44" r="1" />
+            <circle cx="97" cy="44" r="1" />
+
+            <circle cx="57" cy="11" r="1" />
+            <circle cx="65" cy="11" r="1" />
+            <circle cx="73" cy="11" r="1" />
+            <circle cx="81" cy="11" r="1" />
+            <circle cx="89" cy="11" r="1" />
+            <circle cx="97" cy="11" r="1" />
+            <circle cx="105" cy="11" r="1" />
+            <circle cx="113" cy="11" r="1" />
+
+            <circle cx="119" cy="11" r="1" />
+            <circle cx="126" cy="11" r="1" />
+            <circle cx="133" cy="11" r="1" />
+            <circle cx="119" cy="20" r="1" />
+            <circle cx="126" cy="20" r="1" />
+            <circle cx="133" cy="20" r="1" />
+            <circle cx="133" cy="28" r="1" />
+            <circle cx="133" cy="36" r="1" />
+            <circle cx="133" cy="44" r="1" />
+
+            <circle cx="126" cy="44" r="1" />
+            <circle cx="119" cy="44" r="1" />
+            <circle cx="112" cy="44" r="1" />
+            <circle cx="106" cy="44" r="1" />
+            <circle cx="106" cy="36" r="1" />
+            <circle cx="106" cy="28" r="1" />
+
+            <circle cx="57" cy="19" r="1" />
+            <circle cx="65" cy="19" r="1" />
+            <circle cx="73" cy="19" r="1" />
+            <circle cx="81" cy="19" r="1" />
+            <circle cx="89" cy="19" r="1" />
+            <circle cx="97" cy="19" r="1" />
+            <circle cx="105" cy="19" r="1" />
+            <circle cx="113" cy="19" r="1" />
+        </g>
+    </g>
+</defs>
+
+<line class="floor" x1="0" y1="360" x2="500" y2="360"/>
+
+<use href="#conveyor-leg" x="25" y="261"/>
+
+<g transform="translate(180 85)">
+    <use href="#conveyor" x="140" y="155"/>
+    <use href="#conveyor-leg" x="270" y="176"/>
+
+    <use href="#chute-segment"/>
+    <use href="#chute-segment" transform="rotate(5)"/>
+    <use href="#chute-segment" transform="rotate(10)"/>
+    <use href="#chute-segment" transform="rotate(15)"/>
+    <use href="#chute-segment" transform="rotate(20)"/>
+    <use href="#chute-segment" transform="rotate(25)"/>
+    <use href="#chute-segment" transform="rotate(30)"/>
+    <use href="#chute-segment" transform="rotate(35)"/>
+    <use href="#chute-segment" transform="rotate(40)"/>
+    <use href="#chute-segment" transform="rotate(45)"/>
+    <use href="#chute-segment" transform="rotate(50)"/>
+    <use href="#chute-segment" transform="rotate(55)"/>
+    <use href="#chute-segment" transform="rotate(60)"/>
+    <use href="#chute-segment" transform="rotate(65)"/>
+    <use href="#chute-segment" transform="rotate(70)"/>
+    <use href="#chute-segment" transform="rotate(75)"/>
+    <use href="#chute-segment" transform="rotate(80)"/>
+    <use href="#chute-segment" transform="rotate(85)"/>
+
+
+    <use href="#spring" x="42" y="180"/>
+    <use href="#spring" x="118" y="180"/>
+
+    <rect class="main-box" x="0" y="0" width="160" height="180" rx="6" ry="6" />
+    <use href="#light" x="70" y="0"/>
+    
+    <use href="#logo-half-turn" x="80" y="32"/>
+    <circle class="gauge" cx="76" cy="88" r="20"/>
+    <circle class="gauge" cx="76" cy="88" r="6"/>
+
+    <g transform="translate(120, 18)">
+        <use href="#gauge"/>
+        <use id="gauge-pointer-1" href="#gauge-pointer" transform="rotate(-120)"/>
+    </g>
+    <g transform="translate(120, 46)">
+        <use href="#gauge"/>
+        <use href="#gauge-pointer" transform="rotate(-40)"/>
+    </g>
+    <g transform="translate(118, 82)">
+        <use href="#half-gauge" y="2"/>
+        <use href="#gauge-pointer-thin" transform="rotate(-40)"/>
+    </g>
+    <g transform="translate(118, 104)">
+        <use href="#half-gauge" y="2"/>
+        <use href="#gauge-pointer-thin" transform="rotate(-120)"/>
+    </g>
+
+    <use href="#thermometer" x="141" y="41"/>
+
+    <use href="#panel" x="8" y="118"/>
+    <use href="#pipes" x="10" y="-2"/>
+    <use href="#reservoir" x="10"  y="-2"/>
+</g>
+
+
+<script>
+    const needle = document.getElementById('gauge-pointer-1');
+    console.log(needle)
+</script>
+
+</svg>
