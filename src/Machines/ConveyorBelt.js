@@ -29,6 +29,11 @@ function ConveyorBelt({ x, floorY, width, height, active }) {
     width = nWheels * 20;
     const wheels = Array.from({length: nWheels}, (_, i) => i * 20);
 
+    const items = [];
+    for (let i = 0; i < 5; i++) {
+        items.push(<Apple key={i} x={15 + 30 * i} y={0} size={28} />);
+    }
+
     return (
         <g transform={`translate(${x} ${y1})`}>
             <path class="conveyor-belt" d={`M10 0a10 10 0 0 0 0 20h${width - 20}a10 10 0 0 0 0 -20z`} />
@@ -46,11 +51,7 @@ function ConveyorBelt({ x, floorY, width, height, active }) {
             )) }
             <ConveyorBeltLeg x={10} y={10} height={height - 10} />
             <ConveyorBeltLeg x={width - 10} y={10} height={height - 10} />
-            <Apple x="15" y={0} size={32} />
-            <Apple x="55" y={0} size={32} />
-            <Apple x="95" y={0} size={32} />
-            <Apple x="135" y={0} size={32} />
-            <Apple x="175" y={0} size={32} />
+            { items }
         </g>
     );
 }

@@ -8,9 +8,9 @@ function App() {
             <section>
                 <div>You discover a new machine.</div>
                 <div>On its conveyor belt are <strong>2</strong> apples.</div>
-                <div>Press Go and see what the machine does.</div>
+                <div>Press <strong>Go</strong> and see what the machine does.</div>
             </section>
-            <Machine />
+            <Machine label="+3" conveyorRight={8} />
         </main>
     );
 }

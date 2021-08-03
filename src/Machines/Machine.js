@@ -27,7 +27,12 @@ function Button({ x = 0, y = 0, r = 20, onClick, text }) {
 }
 
 function MachineBody({
-    x = 0, floorY, width, height, machineToggle
+    x = 0,
+    floorY,
+    width,
+    height,
+    machineToggle,
+    label,
 }) {
     const width2 = width / 2;
     const y1 = floorY - height + 26;
@@ -38,23 +43,37 @@ function MachineBody({
             <SpringLeg x={width2 - 38} />
             <rect class="main-box" x={-width2} y="-180" width={width} height="180" rx="6" ry="6" />
             <Reservoir x={12 - width2} y={-180}/>
-            <Button y={-150} onClick={machineToggle} text="+2" />
-            <Button y={-100} onClick={machineToggle} text="Go" />
+            <Button x={0} y={-150} onClick={machineToggle} text={label} />
+            <Button x={50} y={-150} onClick={machineToggle} text="Go" />
         </g>
     );
 }
 
-function Machine() {
+function Machine({
+    label, conveyorLeft=5, conveyorRight=5,
+}) {
     const [active, setActive] = useState(false);
     const width = 700;
     const height = 340;
+
+    const machineWidth = 160;
+    const totalWidth = machineWidth + 40 + (conveyorLeft + conveyorRight) * 30;
+    const x1 = (width - totalWidth) / 2;
+    const machineX = x1 + machineWidth / 2 + 20 + conveyorLeft * 30;
 
     const machineToggle = () => setActive(!active);
 
     return (
         <svg className="machine-img" width={700} height={height}>
-            <ConveyorBelt x={50} floorY={height - 1} width={width - 100} height="108" active={active} />
-            <MachineBody x={width / 2} floorY={height - 1} width="160" height="108" machineToggle={machineToggle} />
+            <ConveyorBelt x={x1} floorY={height - 1} width={totalWidth} height="108" active={active} />
+            <MachineBody
+                x={machineX}
+                floorY={height - 1}
+                width={machineWidth}
+                height="108"
+                machineToggle={machineToggle}
+                label={label}
+            />
         </svg>
     );
 }
