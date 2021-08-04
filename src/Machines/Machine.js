@@ -79,7 +79,12 @@ function Machine({
                 active={active}
                 itemsIn={itemsIn}
             />
-            <Items count={itemsIn} x={machineX - machineWidth / 2} y={height -conveyorHeight - 2} />
+            <Items
+                count={itemsIn}
+                x={machineX - machineWidth / 2}
+                y={height -conveyorHeight - 2}
+                animating={active}
+            />
             <MachineBody
                 x={machineX}
                 floorY={height - 1}
