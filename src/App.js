@@ -10,7 +10,7 @@ function App() {
                 <div>On its conveyor belt are <strong>2</strong> apples.</div>
                 <div>Press <strong>Go</strong> and see what the machine does.</div>
             </section>
-            <Machine label="+3" conveyorRight={8} />
+            <Machine label="+3" conveyorRight={10} itemsIn={5} />
         </main>
     );
 }
